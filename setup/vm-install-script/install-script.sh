@@ -9,7 +9,7 @@ source ~/.bashrc
 # Don't ask to restart services after apt update, just do it.
 [ -f /etc/needrestart/needrestart.conf ] && sed -i 's/#\$nrconf{restart} = \x27i\x27/$nrconf{restart} = \x27a\x27/' /etc/needrestart/needrestart.conf
 
-apt-get autoremove -y  #removes the packages that are no longer needed
+#apt-get autoremove -y  #removes the packages that are no longer needed
 apt-get update
 systemctl daemon-reload
 
@@ -25,7 +25,7 @@ pip3 install jc
 
 ### UUID of VM
 ### comment below line if this Script is not executed on Cloud based VMs
-jc dmidecode | jq .[1].values.uuid -r
+#jc dmidecode | jq .[1].values.uuid -r
 
 systemctl enable kubelet
 
