@@ -82,6 +82,9 @@ java -version
 mvn -v
 
 echo ".........----------------#################._.-.-JENKINS-.-._.#################----------------........."
+
+#### IF In Case Jenkins failed to status re-install from this link -->> https://pkg.jenkins.io/debian-stable/
+
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
 echo 'deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/' > /etc/apt/sources.list.d/jenkins.list
 apt update
