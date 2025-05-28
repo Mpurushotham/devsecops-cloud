@@ -1,7 +1,6 @@
 
 pipeline {
   agent any
-
   stages {
     stage('Build Artifact - Maven package') {
       steps {
@@ -9,7 +8,6 @@ pipeline {
         archive 'target/*.jar'
       }
     }
-  }
 
   stage('Unit Tests - JUnit and JaCoCo') {
     steps {
@@ -196,7 +194,6 @@ pipeline {
           sh 'exit 0'
       }
     }
-
   }
 
   post { 
@@ -229,5 +226,5 @@ pipeline {
           sendNotification currentBuild.result
         } 
       }
-    }   
+    }
 }
