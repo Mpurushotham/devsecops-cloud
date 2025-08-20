@@ -48,7 +48,7 @@ cp -i /etc/kubernetes/admin.conf ~/.kube/config
 #kubectl apply -f "https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s-1.11.yaml"
 kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 kubectl rollout status daemonset calico-node -n kube-system --timeout=90s
-sleep 10
+sleep 20
 
 echo "untaint controlplane node"
 node=$(kubectl get nodes -o=jsonpath='{.items[0].metadata.name}')
